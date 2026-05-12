@@ -1,46 +1,23 @@
 // app/why-us/page.tsx
-"use client";
-
-import Image from "next/image";
+import { features } from '@/lib/siteData';
 
 export default function WhyUsPage() {
-  const features = [
-    {
-      icon: "fa-hand-sparkles",
-      title: "Insect-Proof + Fresh Air",
-      description: "Pleated mesh keeps bugs out without blocking ventilation.",
-    },
-    {
-      icon: "fa-cogs",
-      title: "Fully Customizable",
-      description:
-        "Tailored dimensions, colors, and finish for your home or office.",
-    },
-    {
-      icon: "fa-temperature-low",
-      title: "Weather-Resistant",
-      description:
-        "Rust-free aluminium & durable UPVC withstand harsh sun & rain.",
-    },
-    {
-      icon: "fa-leaf",
-      title: "Sustainable & Strong",
-      description:
-        "Eco-friendly materials, energy-saving designs, 10+ yrs durability.",
-    },
-  ];
-
-
-
   return (
     <>
-      <section id="whyus" className="features" style={{ paddingTop: "100px" }}>
+      {/* Hero Banner */}
+      <section className="why-us-hero">
+        <div className="container">
+          <h1>Why Voyle Screen?</h1>
+          <p>Built to fit your lifestyle, engineered to last for generations</p>
+        </div>
+      </section>
+
+      {/* Features Grid */}
+      <section className="features">
         <div className="container">
           <div className="section-header">
-            <h2>
-              Why <span>Voyle Screen?</span>
-            </h2>
-            <p>Built to fit your lifestyle, made to last for generations</p>
+            <h2><span>7 Reasons</span> Homeowners Trust Us</h2>
+            <p>Every detail matters – from material selection to installation</p>
           </div>
           <div className="features-grid">
             {features.map((feature, idx) => (

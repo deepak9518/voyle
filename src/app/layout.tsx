@@ -844,6 +844,24 @@ export default function RootLayout({
     display: block;
   }
 }
+  /* Why Us hero */
+.why-us-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, #e65c00 100%);
+  padding: 80px 0 60px;
+  text-align: center;
+  color: white;
+}
+.why-us-hero h1 {
+  font-size: 3.2rem;
+  margin-bottom: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+.why-us-hero p {
+  font-size: 1.2rem;
+  opacity: 0.95;
+  max-width: 600px;
+  margin: 0 auto;
+}
         `}</style>
       </head>
       <body>
