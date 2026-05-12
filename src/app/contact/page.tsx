@@ -5,16 +5,9 @@ import { useState, useEffect, FormEvent } from "react";
 import Image from "next/image";
 
 export default function ContactPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [formStatus, setFormStatus] = useState({ type: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -50,35 +43,6 @@ export default function ContactPage() {
 
   return (
     <>
-      <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-        <div className="nav-container">
-          <a href="/" className="logo">
-            <Image
-              src="/image.png"
-              alt="Voyle Screen Logo"
-              width={140}
-              height={40}
-              className="logo-img"
-            />
-          </a>
-          <div
-            className="mobile-menu"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <i className={`fas ${isMenuOpen ? "fa-times" : "fa-bars"}`}></i>
-          </div>
-          <div className={`nav-links ${isMenuOpen ? "open" : ""}`}>
-            <a href="/">Home</a>
-            <a href="/products">Products</a>
-            <a href="/gallery">Gallery</a>
-            <a href="/why-us">Why Us</a>
-            <a href="/contact" className="btn-nav">
-              Get Quote <i className="fas fa-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </nav>
-
       <section id="contact" className="contact" style={{ paddingTop: "100px" }}>
         <div className="container contact-grid">
           <div className="contact-info">

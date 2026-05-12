@@ -1,12 +1,8 @@
 // app/gallery/page.tsx
 "use client";
-
-import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function GalleryPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
 
   const galleryItems = [
     {
@@ -31,13 +27,6 @@ export default function GalleryPage() {
     },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <>

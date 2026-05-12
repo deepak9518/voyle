@@ -1,13 +1,9 @@
 // app/why-us/page.tsx
 "use client";
 
-import { useState, useEffect } from "react";
 import Image from "next/image";
 
 export default function WhyUsPage() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
   const features = [
     {
       icon: "fa-hand-sparkles",
@@ -34,11 +30,7 @@ export default function WhyUsPage() {
     },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 10);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+
 
   return (
     <>
